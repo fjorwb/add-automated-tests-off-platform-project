@@ -4,6 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Save state
+        run: echo "{name}={value}" >> $GITHUB_STATE
+      - name: Set output
+        run: echo "{name}={value}" >> $GITHUB_OUTPUT
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
